@@ -33,6 +33,26 @@ CloudPedagogy.
 
 ------------------------------------------------------------------------
 
+## 🖼 Interface Overview
+
+### Dashboard
+
+![Project Dashboard](assets/images/dashboard.png)
+
+### Creating a New Project
+
+![New Project Modal](assets/images/new-project.png)
+
+### Structured Workflow Step
+
+![Workflow Step](assets/images/workflow-step.png)
+
+### Exporting a Governance Record
+
+![Export Markdown](assets/images/export-md.png)
+
+------------------------------------------------------------------------
+
 ## 🎬 What This Repository Demonstrates
 
 This repository is a **working prototype + reference implementation** of
