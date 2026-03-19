@@ -33,7 +33,7 @@ CloudPedagogy.
 
 ------------------------------------------------------------------------
 
-## 🖼 Interface Overview
+## 🖼️ Screenshot
 
 ### Dashboard
 
