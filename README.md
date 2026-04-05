@@ -242,6 +242,8 @@ management.
 Institutional customisation or integration services may be available
 separately by agreement.
 
+All example data and structures are synthetic and do not represent any real institution, programme, or curriculum.
+
 ------------------------------------------------------------------------
 
 ## 🔧 Extensibility
