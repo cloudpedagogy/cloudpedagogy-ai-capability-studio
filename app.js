@@ -732,7 +732,7 @@ function renderStructuredWorkflowFramework(project, exercise) {
 
   return `
     <div>
-      <div class="marker" style="margin-bottom: 24px;">
+      <div class="marker" style="margin-bottom: var(--spacing-lg);">
         Progress: ${progress}% <span class="dot-separator">Step ${stepIndex + 1} of ${steps.length}</span>
       </div>
 
@@ -741,7 +741,7 @@ function renderStructuredWorkflowFramework(project, exercise) {
         <div class="muted">${escapeHTML(exercise.workflow?.summary || exercise.summary || "")}</div>
 
         ${Array.isArray(exercise.guardrails) && exercise.guardrails.length ? `
-          <div class="marker" style="margin-top:12px;">
+          <div class="marker" style="margin-top: var(--spacing-md);">
             Guardrails: ${escapeHTML(exercise.guardrails.join(" · "))}
           </div>
         ` : ""}
@@ -750,7 +750,7 @@ function renderStructuredWorkflowFramework(project, exercise) {
       <div class="section">
         <h2>Inputs</h2>
         <div class="muted">These inputs feed the prompts and maintain context consistent across steps.</div>
-        <div class="card" style="margin-top:16px;">
+        <div class="card" style="margin-top: var(--spacing-md);">
           ${inputs.map(inp => renderGlobalInputControl(inp, project.data.inputs?.[inp.key] ?? "")).join("")}
         </div>
       </div>
@@ -759,7 +759,7 @@ function renderStructuredWorkflowFramework(project, exercise) {
         <h2>Step: ${escapeHTML(step.title || stepId)}</h2>
 
         ${Array.isArray(step.instructions) && step.instructions.length ? `
-          <div class="muted" style="margin-bottom:16px;">
+          <div class="muted" style="margin-bottom: var(--spacing-md);">
             <ul>
               ${step.instructions.map(b => `<li>${escapeHTML(b)}</li>`).join("")}
             </ul>
@@ -767,7 +767,7 @@ function renderStructuredWorkflowFramework(project, exercise) {
         ` : ""}
 
         ${Array.isArray(step.values_in_play) && step.values_in_play.length ? `
-          <div class="marker" style="margin-bottom: 8px;">
+          <div class="marker" style="margin-bottom: var(--spacing-sm);">
             Values in play: ${escapeHTML(step.values_in_play.join(" · "))}
           </div>
         ` : ""}
@@ -788,14 +788,14 @@ function renderStructuredWorkflowFramework(project, exercise) {
         <h2>${escapeHTML(step?.prompt_block?.title || "Prompt")}</h2>
         <div class="muted">Copy the prompt into an external AI tool, then paste outputs back into relevant fields.</div>
 
-        <div class="card" style="margin-top:10px;">
+        <div class="card" style="margin-top: var(--spacing-sm);">
           <textarea id="fw_prompt_preview" readonly>${escapeHTML(renderedPrompt)}</textarea>
-          <div class="card__actions" style="margin-top:10px;">
+          <div class="card__actions" style="margin-top: var(--spacing-sm);">
             <button id="fw_copy_prompt" class="btn btn--primary">Copy Prompt</button>
           </div>
         </div>
 
-        <div class="muted" style="margin-top:10px;">
+        <div class="muted" style="margin-top: var(--spacing-sm);">
           Tip: Prompts use placeholders like <code>{{context_type}}</code>. Fill inputs/fields above to populate the prompt.
         </div>
       </div>
@@ -907,7 +907,7 @@ function renderStructuredWorkflowLegacy(project, exercise) {
 
   return `
     <div>
-      <div class="marker" style="margin-bottom: 24px;">
+      <div class="marker" style="margin-bottom: var(--spacing-lg);">
         Progress: ${progress}% <span class="dot-separator">Step ${stepIndex + 1} of ${steps.length}</span>
       </div>
 
@@ -930,7 +930,7 @@ function renderStructuredWorkflowLegacy(project, exercise) {
         <h2>Prompt starters</h2>
         <div class="card" style="margin-top:10px;">
           ${(exercise.prompt_starters || []).map((p, i) => `
-            <div style="display:grid; gap:8px;">
+            <div style="display:grid; gap: var(--spacing-sm);">
               <div class="muted">${i + 1}. ${escapeHTML(p)}</div>
               <button class="btn" data-copy="${escapeAttr(p)}">Copy</button>
             </div>
@@ -1132,7 +1132,7 @@ function renderGlobalInputControl(inp, value) {
     }).join("");
 
     return `
-      <div style="margin-bottom:12px;">
+      <div style="margin-bottom: var(--spacing-md);">
         <label class="label">${escapeHTML(label)}${requiredMark}</label>
         <select id="fw_inp_${escapeAttr(key)}" class="select">
           <option value="" ${v ? "" : "selected"}>—</option>
@@ -1144,7 +1144,7 @@ function renderGlobalInputControl(inp, value) {
 
   if (inp.type === "text") {
     return `
-      <div style="margin-bottom:12px;">
+      <div style="margin-bottom: var(--spacing-md);">
         <label class="label">${escapeHTML(label)}${requiredMark}</label>
         <input id="fw_inp_${escapeAttr(key)}" class="input" value="${escapeAttr(v)}" />
       </div>
@@ -1153,7 +1153,7 @@ function renderGlobalInputControl(inp, value) {
 
   // textarea default
   return `
-    <div style="margin-bottom:12px;">
+    <div style="margin-bottom: var(--spacing-md);">
       <label class="label">${escapeHTML(label)}${requiredMark}</label>
       <textarea id="fw_inp_${escapeAttr(key)}">${escapeHTML(v)}</textarea>
     </div>
@@ -1167,7 +1167,7 @@ function renderStepFieldControl(stepId, f, value) {
   const v = value ?? "";
 
   return `
-    <div style="margin-bottom:12px;">
+    <div style="margin-bottom: var(--spacing-md);">
       <label class="label">${escapeHTML(label)}${requiredMark}</label>
       <textarea id="fw_step_${escapeAttr(stepId)}_${escapeAttr(f.key)}" placeholder="${escapeAttr(placeholder)}">${escapeHTML(v)}</textarea>
     </div>
