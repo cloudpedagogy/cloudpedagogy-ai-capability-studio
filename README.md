@@ -1,7 +1,25 @@
 # CloudPedagogy AI Capability Studio
 
-AI Capability Studio is a static, offline-first, browser-based tool for
-**structured human--AI workflow documentation**.
+AI Capability Studio is a static, offline-first, browser-based tool for **structured human--AI workflow documentation**.
+
+## 🔗 Role in the CloudPedagogy Ecosystem
+
+**Phase:** Phase 5 — Infrastructure / Meta Layer
+
+**Role:**
+Provides the infrastructure for authoring, distributing, and executing governance-ready AI capability exercises and workflows.
+
+**Upstream Inputs:**
+Capability models and taxonomies from the **Capability-Driven Development** framework.
+
+**Downstream Outputs:**
+Feeds structured workflow data into the **Capability Assessment Tool** and **Governance Maturity Assessment**.
+
+**Does NOT:**
+- Perform automated curriculum simulation.
+- Record live individual decision outcomes in production (this is for the Decision Record).
+
+For a full system overview, see: [SYSTEM_OVERVIEW.md](../SYSTEM_OVERVIEW.md)
 
 It enables educators, researchers, strategy teams, and governance
 leaders to:
